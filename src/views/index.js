@@ -1,0 +1,11 @@
+export { default as Admin } from "./Admin";
+export { default as AdminEjemplares } from "./AdminEjemplares";
+export { default as AdminLibros } from "./AdminLibros";
+export { default as AdminMultas } from "./AdminMultas";
+export { default as AdminReservas } from "./AdminReservas";
+export { default as AdminRoles } from "./AdminRoles";
+export { default as AdminUsuarios } from "./AdminUsuarios";
+export { default as Libros } from "./Libros";
+export { default as Multas } from "./Multas";
+export { default as NotFound } from "./NotFound";
+export { default as Perfil } from "./Perfil";

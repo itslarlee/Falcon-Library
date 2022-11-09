@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from "react-router-dom"
+import { Admin, AdminEjemplares, AdminLibros, AdminMultas, AdminReservas, AdminRoles, AdminUsuarios, Libros, Multas, NotFound, Perfil } from './views'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route index element={<Libros />} />
+      <Route path="libros" element={<Libros />} />
+      <Route path="perfil" element={<Perfil />} />
+      <Route path="admin" element={<Admin />}>
+        <Route path="libros" element={<AdminLibros />} />
+        <Route path="ejemplares" element={<AdminEjemplares />} />
+        <Route path="usuarios" element={<AdminUsuarios />} />
+        <Route path="reservas" element={<AdminReservas />} />
+        <Route path="roles" element={<AdminRoles />} />
+        <Route path="multas" element={<AdminMultas />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+      <Route path="multas" element={<Multas />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
