@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from '../components/Header'
 
 function Admin() {
   return (
-    <div>Admin</div>
+    <>
+      <Header />
+      <div>Admin</div>
+    </>
   )
 }
 

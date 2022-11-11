@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 0,
+  userState: {
+    role: "Admin"
+  },
 }
 
 export const userSlice = createSlice({
@@ -9,7 +11,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setCurrentUser: (state, action) => {
-      state.value = action.payload
+      state.userState = action.payload
     },
   },
 })
