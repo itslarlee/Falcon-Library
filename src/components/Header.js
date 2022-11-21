@@ -5,17 +5,14 @@ import { TabMenu } from 'primereact/tabmenu';
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentTab } from '../features/navigation/navigationSlice';
 
-
-
 const Header = () => {
     
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const [userState, currentTabState] = useSelector((state) => [
-        state.userSlice.userState,
+       state.userSlice.userState,
         state.navigationSlice.currentTabState,
-    ]);
-    
+    ]); 
 
     const userTabs = [
         { label: 'Libros', icon: 'pi pi-fw pi-book', pageURL: '/libros' },
@@ -28,11 +25,8 @@ const Header = () => {
     const menuTabs = (userState.role === 'Admin') ? adminTabs : userTabs
 
     const changeTab = ({value, index}) => {
-        console.log(index);
-        console.log(value);
         dispatch(setCurrentTab(index));
         navigate(value.pageURL);
-
     }
 
     return (
