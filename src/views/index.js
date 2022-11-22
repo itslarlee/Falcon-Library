@@ -1,10 +1,10 @@
-export { default as Admin } from "./Admin";
-export { default as AdminEjemplares } from "./AdminEjemplares";
-export { default as AdminLibros } from "./AdminLibros";
-export { default as AdminMultas } from "./AdminMultas";
-export { default as AdminReservas } from "./AdminReservas";
-export { default as AdminRoles } from "./AdminRoles";
-export { default as AdminUsuarios } from "./AdminUsuarios";
+export { default as Admin } from "./admin/Admin";
+export { default as AdminEjemplares } from "./admin/AdminEjemplares";
+export { default as AdminLibros } from "./admin/AdminLibros";
+export { default as AdminMultas } from "./admin/AdminMultas";
+export { default as AdminReservas } from "./admin/AdminReservas";
+export { default as AdminRoles } from "./admin/AdminRoles";
+export { default as AdminUsuarios } from "./admin/AdminUsuarios";
 export { default as Libros } from "./Libros";
 export { default as Multas } from "./Multas";
 export { default as NotFound } from "./NotFound";

@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../components/Header'
 
 function Multas() {
   return (
-    <div>Multas</div>
+    <>
+      <Header />
+      <div>Multas</div>
+
+    </>
+
   )
 }
 
