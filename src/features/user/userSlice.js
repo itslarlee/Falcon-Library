@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   userState: {
-    role: "Student"
+    role: "Admin"
   },
 }
 

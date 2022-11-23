@@ -1,27 +1,22 @@
 import './App.css';
 import { Route, Routes } from "react-router-dom"
-import { Admin, AdminEjemplares, AdminLibros, AdminMultas, AdminReservas, AdminRoles, AdminUsuarios, Libros, Multas, NotFound, Perfil } from './views'
-import { useSelector } from 'react-redux'
-import ProtectedRoute from './components/ProtectedRoute';
+import { Admin, AdminEjemplares, AdminLibros, AdminMultas, AdminReservas, AdminUsuarios, Libros, Multas, NotFound, Perfil, Login } from './views'
+import UserRoute from './components/ProtectedRoute';
+import ProtectedRoute from './components/UserRoute';
 
 function App() {
-
-  const [userState] = useSelector((state) => [
-    state.userSlice.userState,
-  ]);
-
   return (
     <Routes>
-      <Route index element={<Libros />} />
-      <Route path="libros" element={<Libros />} />
-      <Route path="perfil" element={<Perfil />} />
-      <Route path="admin" element={<ProtectedRoute user={userState}><Admin/></ProtectedRoute>}>
-        <Route path="libros" element={<ProtectedRoute user={userState}><AdminLibros/></ProtectedRoute>}/>
-        <Route path="ejemplares" element={<ProtectedRoute user={userState}><AdminEjemplares/></ProtectedRoute>} />
-        <Route path="usuarios" element={<ProtectedRoute user={userState}><AdminUsuarios/></ProtectedRoute>} />
-        <Route path="reservas" element={<ProtectedRoute user={userState}><AdminReservas/></ProtectedRoute>} />
-        <Route path="roles" element={<ProtectedRoute user={userState}><AdminRoles/></ProtectedRoute>} />
-        <Route path="multas" element={<ProtectedRoute user={userState}><AdminMultas/></ProtectedRoute>} />
+      <Route index element={<Login />} />
+      <Route path="login" element={<Login />} />
+      <Route path="libros" element={<UserRoute><Libros /></UserRoute>} />
+      <Route path="perfil" element={<UserRoute><Perfil /></UserRoute>} />
+      <Route path="admin" element={<UserRoute><ProtectedRoute><Admin/></ProtectedRoute></UserRoute>}>
+        <Route path="libros" element={<UserRoute><ProtectedRoute ><AdminLibros/></ProtectedRoute></UserRoute>}/>
+        <Route path="ejemplares" element={<UserRoute><ProtectedRoute><AdminEjemplares/></ProtectedRoute></UserRoute>} />
+        <Route path="usuarios" element={<UserRoute><ProtectedRoute ><AdminUsuarios/></ProtectedRoute></UserRoute>} />
+        <Route path="reservas" element={<UserRoute><ProtectedRoute ><AdminReservas/></ProtectedRoute></UserRoute>} />
+        <Route path="multas" element={<UserRoute><ProtectedRoute ><AdminMultas/></ProtectedRoute></UserRoute>} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="multas" element={<Multas />} />
