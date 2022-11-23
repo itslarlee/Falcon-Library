@@ -3,13 +3,11 @@ import { useSelector } from 'react-redux'
 
 const ProtectedRoute = ({children}) => {
 
-    const [userState] = useSelector((state) => [
-        state.userSlice.userState,
-      ]);
+    const user = JSON.parse(window.sessionStorage.getItem('user'));
 
-    const DEFAULT_URL = "/libros"
-    if (userState && userState.role !== 'Admin') {
-        return <Navigate to={DEFAULT_URL} replace /> 
+    console.log(user);
+    if (user.role !== 'Admin') {
+        return <Navigate to="/" replace /> 
     }
     return children;
 }

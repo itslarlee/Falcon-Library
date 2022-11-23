@@ -9,8 +9,11 @@ const Header = () => {
     
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    const [userState, currentTabState] = useSelector((state) => [
-       state.userSlice.userState,
+
+    const user = JSON.parse(window.sessionStorage.getItem('user'));
+
+    const [ currentTabState] = useSelector((state) => [
+
         state.navigationSlice.currentTabState,
     ]); 
 
@@ -22,7 +25,7 @@ const Header = () => {
     const adminTabs = [...userTabs,
         { label: 'Admin', icon: 'pi pi-fw pi-server', pageURL: '/admin'}
     ];
-    const menuTabs = (userState.role === 'Admin') ? adminTabs : userTabs
+    const menuTabs = (user.role === 'Admin') ? adminTabs : userTabs
 
     const changeTab = ({value, index}) => {
         dispatch(setCurrentTab(index));

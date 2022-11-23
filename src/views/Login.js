@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import { Card } from 'primereact/card';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
@@ -10,6 +12,9 @@ import { Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function Login() {
+
+    const navigate = useNavigate();
+
     const [userState] = useSelector((state) => [
         state.userSlice.userState,
     ]);
@@ -20,14 +25,26 @@ function Login() {
             .required('Este campo es requerido'),
     });
 
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
-
     // const DEFAULT_URL = "/libros"
     // if (userState) {
     //     return <Navigate to={DEFAULT_URL} replace />
     // }
 
+    const getUserByEmail = async (user) => {
+
+        try {
+            console.log(user);
+            const response = axios.get('https://localhost:7076/FalconsLibrary/User/userByEmail', {
+                params: {
+                    email: user.email,
+                }
+            })
+            return (await response).data
+        } catch (error) {
+            return error
+        }
+
+    }
     return (
         <Formik
             initialValues={{
@@ -35,9 +52,16 @@ function Login() {
                 password: '',
             }}
             validationSchema={LoginSchema}
-            onSubmit={values => {
-                // same shape as initial values
-                console.log(values);
+            onSubmit={async (user) => {
+
+                const userDB = await getUserByEmail(user)
+                if (userDB.password === user.password) {
+                    console.log(userDB);
+                    window.sessionStorage.setItem("user", JSON.stringify(userDB));
+                    navigate("/libros");
+                }else{
+                    console.log("No");
+                }
             }}
         >
             {(props) => (
@@ -73,7 +97,7 @@ function Login() {
                                             </span>
                                             {meta.touched && meta.error && (
                                                 <small id="username-help" className="p-error">{meta.error}</small>
-                                            
+
                                             )}
                                         </div>
                                     )}
