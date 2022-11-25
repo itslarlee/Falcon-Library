@@ -14,21 +14,12 @@ import { useSelector } from 'react-redux'
 function Login() {
 
     const navigate = useNavigate();
-
-    const [userState] = useSelector((state) => [
-        state.userSlice.userState,
-    ]);
-
+    const user = JSON.parse(window.sessionStorage.getItem('user'));
     const LoginSchema = yup.object().shape({
         email: yup.string().email('Correo invalido').required('Este campo es requerido'),
         password: yup.string()
             .required('Este campo es requerido'),
     });
-
-    // const DEFAULT_URL = "/libros"
-    // if (userState) {
-    //     return <Navigate to={DEFAULT_URL} replace />
-    // }
 
     const getUserByEmail = async (user) => {
 
@@ -45,7 +36,10 @@ function Login() {
         }
 
     }
-    return (
+
+    const DEFAULT_URL = "/libros"
+    return user ? <Navigate to={DEFAULT_URL} replace /> : 
+    (
         <Formik
             initialValues={{
                 email: '',

@@ -1,15 +1,14 @@
 import {Navigate} from 'react-router-dom'
-import { useSelector } from 'react-redux'
 
 const ProtectedRoute = ({children}) => {
 
     const user = JSON.parse(window.sessionStorage.getItem('user'));
 
-    console.log(user);
-    if (user.role !== 'Admin') {
+    if (user?.role !== 'Admin') {
         return <Navigate to="/" replace /> 
+    } else {
+        return children;
     }
-    return children;
 }
 
 export default ProtectedRoute

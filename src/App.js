@@ -7,7 +7,7 @@ import ProtectedRoute from './components/UserRoute';
 function App() {
   return (
     <Routes>
-      <Route index element={<Libros />} />
+      <Route index element={<Login />} />
       <Route path="login" element={<Login />} />
       <Route path="libros" element={<UserRoute><Libros /></UserRoute>} />
       <Route path="perfil" element={<UserRoute><Perfil /></UserRoute>} />

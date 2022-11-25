@@ -25,7 +25,7 @@ const Header = () => {
     const adminTabs = [...userTabs,
         { label: 'Admin', icon: 'pi pi-fw pi-server', pageURL: '/admin'}
     ];
-    const menuTabs = (user.role === 'Admin') ? adminTabs : userTabs
+    const menuTabs = (user?.role === 'Admin') ? adminTabs : userTabs
 
     const changeTab = ({value, index}) => {
         dispatch(setCurrentTab(index));
