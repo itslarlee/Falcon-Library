@@ -12,8 +12,7 @@ const Header = () => {
 
     const user = JSON.parse(window.sessionStorage.getItem('user'));
 
-    const [ currentTabState] = useSelector((state) => [
-
+    const [currentTabState] = useSelector((state) => [
         state.navigationSlice.currentTabState,
     ]); 
 

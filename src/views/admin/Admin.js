@@ -1,15 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { TabView, TabPanel } from 'primereact/tabview';
+import { AdminEjemplares, AdminLibros, AdminMultas, AdminReservas, AdminUsuarios } from '../'
 import Header from '../../components/Header'
-import { Outlet } from 'react-router-dom'
 
 
 function Admin() {
+
+
   return (
     <>
       <Header />
-      <div>Admin</div>
-
-      <Outlet />
+      <div className="card">
+        <TabView>
+          <TabPanel header="Ejemplares">
+            <AdminEjemplares />
+          </TabPanel>
+          <TabPanel header="Libros">
+            <AdminLibros />
+          </TabPanel>
+          <TabPanel header="Multas">
+            <AdminMultas />
+          </TabPanel>
+          <TabPanel header="Reservas">
+            <AdminReservas />
+          </TabPanel>
+          <TabPanel header="Usuarios">
+            <AdminUsuarios />
+          </TabPanel>
+        </TabView>
+      </div>
 
     </>
   )
