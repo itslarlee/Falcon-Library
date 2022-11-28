@@ -210,48 +210,48 @@ const AdminUsuarios = () => {
                 <div className="field">
                     <label htmlFor="user_ID">Cedula</label>
                     <InputNumber id="user_ID" useGrouping={false} value={product.user_ID} onValueChange={(e) => onInputNumberChange(e, 'user_ID')} />
-                    {submitted && !product.user_ID && <small className="p-error">Id is required.</small>}
+                    {submitted && !product.user_ID && <small className="p-error">Requerido</small>}
                 </div>
                 <div className="field">
                     <label htmlFor="user_Name">Nombre</label>
                     <InputText id="user_Name" value={product.user_Name} onChange={(e) => onInputChange(e, 'user_Name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.user_Name })} />
-                    {submitted && !product.user_Name && <small className="p-error">user_Name is required.</small>}
+                    {submitted && !product.user_Name && <small className="p-error">Requerido</small>}
                 </div>
 
                 <div className="formgrid grid">
                     <div className="field col">
                         <label htmlFor="f_LastName">Primer Apellido</label>
                         <InputText id="f_LastName" value={product.f_LastName} onChange={(e) => onInputChange(e, 'f_LastName')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.f_LastName })} />
-                        {submitted && !product.f_LastName && <small className="p-error">f_LastName is required.</small>}
+                        {submitted && !product.f_LastName && <small className="p-error">Requerido</small>}
                     </div>
                     <div className="field col">
                         <label htmlFor="s_LastName">Segundo Apellido</label>
                         <InputText id="s_LastName" value={product.s_LastName} onChange={(e) => onInputChange(e, 's_LastName')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.s_LastName })} />
-                        {submitted && !product.s_LastName && <small className="p-error">s_LastName is required.</small>}
+                        {submitted && !product.s_LastName && <small className="p-error">Requerido</small>}
                     </div>
                 </div>
 
                 <div className="field">
                     <label htmlFor="email">Correo</label>
                     <InputText id="email" value={product.email} onChange={(e) => onInputChange(e, 'email')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.email })} />
-                    {submitted && !product.email && <small className="p-error">email is required.</small>}
+                    {submitted && !product.email && <small className="p-error">Requerido</small>}
                 </div>
                 <div className="field">
                     <label htmlFor="password">Contraseña</label>
                     <InputText id="password" value={product.password} onChange={(e) => onInputChange(e, 'password')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.password })} />
-                    {submitted && !product.password && <small className="p-error">password is required.</small>}
+                    {submitted && !product.password && <small className="p-error">Requerido</small>}
                 </div>
                 <div className="field">
                     <label htmlFor="role">Role</label>
                     <InputText id="role" value={product.role} onChange={(e) => onInputChange(e, 'role')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.role })} />
-                    {submitted && !product.role && <small className="p-error">role is required.</small>}
+                    {submitted && !product.role && <small className="p-error">Requerido</small>}
                 </div>
             </Dialog>
 
             <Dialog visible={deleteProductDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle mr-3" style={{ fontSize: '2rem' }} />
-                    {product && <span>Are you sure you want to delete <b>{product.name}</b>?</span>}
+                    {product && <span>Seguro que quieres eliminar <b>{product.name}</b>?</span>}
                 </div>
             </Dialog>
 
