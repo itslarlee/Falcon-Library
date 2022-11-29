@@ -13,12 +13,12 @@ const AdminUsuarios = () => {
 
     let emptyProduct = {
         user_ID: null,
-        user_Name: null,
-        f_LastName: null,
-        s_LastName: null,
-        email: null,
-        password: null,
-        role: null,
+        user_Name: '',
+        f_LastName: '',
+        s_LastName: '',
+        email: '',
+        password: '',
+        role: '',
     };
 
     const [products, setProducts] = useState(null);
@@ -157,7 +157,7 @@ const AdminUsuarios = () => {
         return (
             <React.Fragment>
                 <Button icon="pi pi-pencil" className="p-button-rounded p-button-success mr-2" onClick={() => editProduct(rowData)} />
-                <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onClick={() => confirmDeleteProduct(rowData)} />
+                <Button icon="pi pi-trash" className="p-button-rounded p-button-danger" onClick={() => confirmDeleteProduct(rowData)} />
             </React.Fragment>
         );
     }
@@ -167,23 +167,23 @@ const AdminUsuarios = () => {
             <h5 className="mx-0 my-1">Manejo de Usuarios</h5>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
-                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
+                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar..." />
             </span>
-            <Button label="New" icon="pi pi-plus" className="p-button-success mr-2" onClick={openNew} />
+            <Button label="Nuevo" icon="pi pi-plus" className="p-button-success mr-2" onClick={openNew} />
         </div>
     );
     const productDialogFooter = (
         <React.Fragment>
-            <Button label="Cancel" icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
-            <Button label="Save" icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
+          <Button label="Cancelar" icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
+          <Button label="Guardar" icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
         </React.Fragment>
-    );
-    const deleteProductDialogFooter = (
+      );
+      const deleteProductDialogFooter = (
         <React.Fragment>
-            <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideDeleteProductDialog} />
-            <Button label="Yes" icon="pi pi-check" className="p-button-text" onClick={deleteProduct} />
+          <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideDeleteProductDialog} />
+          <Button label="Si" icon="pi pi-check" className="p-button-text" onClick={deleteProduct} />
         </React.Fragment>
-    );
+      );
 
     return (
         <div className="datatable-crud-demo">
