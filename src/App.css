@@ -40,3 +40,10 @@
 body {
   background-color: rgb(76, 0, 128);
 }
+
+.panel-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem;
+}
