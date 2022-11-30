@@ -16,19 +16,26 @@ const Header = () => {
         state.navigationSlice.currentTabState,
     ]); 
 
+    const logOutTab =  { label: 'Salir Sesion', icon: 'pi pi-fw pi-sign-out', pageURL: '/', logOut: true};
+
     const userTabs = [
         { label: 'Libros', icon: 'pi pi-fw pi-book', pageURL: '/libros' },
         { label: 'Multas', icon: 'pi pi-fw pi-file', pageURL: '/multas' },
         { label: 'Perfil', icon: 'pi pi-fw pi-user', pageURL: '/perfil'},
     ];
-    const adminTabs = [...userTabs,
-        { label: 'Admin', icon: 'pi pi-fw pi-server', pageURL: '/admin'}
-    ];
-    const menuTabs = (user?.role === 'Admin') ? adminTabs : userTabs
+    const adminTabs = [...userTabs, { label: 'Admin', icon: 'pi pi-fw pi-server', pageURL: '/admin'}];
+
+    const menuTabs = (user?.role === 'Admin') ? [...adminTabs,  logOutTab] : [...userTabs, logOutTab]
 
     const changeTab = ({value, index}) => {
-        dispatch(setCurrentTab(index));
-        navigate(value.pageURL);
+        if (value.logOut) {
+            window.sessionStorage.removeItem('user');
+            dispatch(setCurrentTab(0));
+            navigate(value.pageURL);
+        }else{
+            dispatch(setCurrentTab(index));
+            navigate(value.pageURL);
+        }
     }
 
     return (

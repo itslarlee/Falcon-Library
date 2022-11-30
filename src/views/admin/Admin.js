@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from "react-router-dom"
 import { TabView, TabPanel } from 'primereact/tabview';
 import { AdminEjemplares, AdminLibros, AdminMultas, AdminReservas, AdminUsuarios } from '../'
 import Header from '../../components/Header'
 
 
 function Admin() {
+
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const user = JSON.parse(window.sessionStorage.getItem('user'));
+    if (!user) {
+      navigate(`/`);
+    } else if(user?.role !== 'Admin') {
+      navigate(`/perfil`);
+    } 
+  }, [])
 
 
   return (
