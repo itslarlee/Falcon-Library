@@ -38,12 +38,53 @@
 }
 
 body {
-  background-color: rgb(76, 0, 128);
+  background-color: #eed7ff;
+  background-color: #6902ad;
 }
 
 .panel-pages {
   display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0.5rem 4rem;
+}
+
+.title {
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4rem;
+  margin: 0.5rem ;
+  color: white;
 }
+
+.book-card {
+  /* Add shadows to create the "card" effect */
+  background-color: #6902ad00;
+  /* border: #6902ad solid 0.5px; */
+  color: #6902ad;
+  box-shadow: 0 4px 8px 0 rgba(58, 0, 85, 1);
+  border-radius: 15px;
+  transition: 0.3s;
+  margin: 2rem;
+}
+
+/* On mouse-over, add a deeper shadow */
+.book-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(93, 0, 180, 1);
+}
+
+/* Add some padding inside the card container */
+.book-card-container {
+  padding: 2px 16px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.book-card-item{
+  margin: 10px 5%;
+}
+
