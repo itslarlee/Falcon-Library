@@ -143,7 +143,7 @@ function Libros() {
                             <div className="book-card" key={copy.copyID}>
                               <div className="book-card-container">
                                 <div className="book-card-item">
-                                  <b><p>ID de Copia: {copy.copyID}</p></b>
+                                  <b><p>ID de Ejemplar: {copy.copyID}</p></b>
                                 </div>
                                 <div className="book-card-item">
                                   <Button label="Reservar" className="p-button-rounded p-button-help" onClick={() => openNew(copy.copyID)} />
@@ -165,7 +165,7 @@ function Libros() {
                     {submitted && !product.reserve_ID && <small className="p-error">Requerido</small>}
                   </div>
                   <div className="field">
-                    <label htmlFor="bookID">ID Copia</label>
+                    <label htmlFor="bookID">ID Ejemplar</label>
                     <InputNumber id="bookID" useGrouping={false} value={product.bookID} onValueChange={(e) => onInputNumberChange(e, 'bookID')} />
                     {submitted && !product.bookID && <small className="p-error">Requerido</small>}
                   </div>

@@ -154,7 +154,7 @@ function AdminMultas() {
 
   const header = (
     <div className="table-header">
-      <h5 className="mx-0 my-1">Manejo de Libros</h5>
+      <h5 className="mx-0 my-1">Manejo de Multas</h5>
       <span className="p-input-icon-left">
         <i className="pi pi-search" />
         <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar..." />
@@ -183,10 +183,10 @@ function AdminMultas() {
         <DataTable ref={dt} value={products}
           dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords}"
           globalFilter={globalFilter} header={header} responsiveLayout="scroll">
           <Column field="fines_ID" header="ID" sortable style={{ minWidth: '8rem' }}></Column>
-          <Column field="description" header="Descripcion" sortable style={{ minWidth: '16rem' }}></Column>
+          <Column field="description" header="Descripción" sortable style={{ minWidth: '16rem' }}></Column>
           <Column field="status" header="Estado" sortable style={{ minWidth: '12rem' }}></Column>
           <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
         </DataTable>
@@ -199,7 +199,7 @@ function AdminMultas() {
           {submitted && !product.fines_ID && <small className="p-error">Requerido</small>}
         </div>
         <div className="field">
-          <label htmlFor="description">Descripcion</label>
+          <label htmlFor="description">Descripción</label>
           <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
         </div>
         <div className="field">

@@ -193,22 +193,22 @@ const AdminUsuarios = () => {
                 <DataTable ref={dt} value={products}
                     dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+                    currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords}"
                     globalFilter={globalFilter} header={header} responsiveLayout="scroll">
                     <Column field="user_ID" header="ID" sortable style={{ minWidth: '12rem' }}></Column>
-                    <Column field="user_Name" header="Name" sortable style={{ minWidth: '16rem' }}></Column>
-                    <Column field="f_LastName" header="First Lastname" sortable style={{ minWidth: '16rem' }}></Column>
-                    <Column field="s_LastName" header="Second Lastname" sortable style={{ minWidth: '16rem' }}></Column>
-                    <Column field="email" header="Email" sortable style={{ minWidth: '16rem' }}></Column>
-                    <Column field="password" header="Password" sortable style={{ minWidth: '16rem' }}></Column>
-                    <Column field="role" header="Role" sortable style={{ minWidth: '16rem' }}></Column>
+                    <Column field="user_Name" header="Nombre" sortable style={{ minWidth: '16rem' }}></Column>
+                    <Column field="f_LastName" header="Primer Apellido" sortable style={{ minWidth: '16rem' }}></Column>
+                    <Column field="s_LastName" header="Segundo Apellido" sortable style={{ minWidth: '16rem' }}></Column>
+                    <Column field="email" header="Correo" sortable style={{ minWidth: '16rem' }}></Column>
+                    <Column field="password" header="Contraseña" sortable style={{ minWidth: '16rem' }}></Column>
+                    <Column field="role" header="Rol" sortable style={{ minWidth: '16rem' }}></Column>
                     <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
                 </DataTable>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '450px' }} header="Nuevo usuario" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                 <div className="field">
-                    <label htmlFor="user_ID">Cedula</label>
+                    <label htmlFor="user_ID">ID</label>
                     <InputNumber id="user_ID" useGrouping={false} value={product.user_ID} onValueChange={(e) => onInputNumberChange(e, 'user_ID')} />
                     {submitted && !product.user_ID && <small className="p-error">Requerido</small>}
                 </div>
@@ -242,7 +242,7 @@ const AdminUsuarios = () => {
                     {submitted && !product.password && <small className="p-error">Requerido</small>}
                 </div>
                 <div className="field">
-                    <label htmlFor="role">Role</label>
+                    <label htmlFor="role">Rol</label>
                     <InputText id="role" value={product.role} onChange={(e) => onInputChange(e, 'role')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.role })} />
                     {submitted && !product.role && <small className="p-error">Requerido</small>}
                 </div>

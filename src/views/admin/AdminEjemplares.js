@@ -121,7 +121,7 @@ function AdminEjemplares() {
 
   const header = (
     <div className="table-header">
-      <h5 className="mx-0 my-1">Manejo de Copias</h5>
+      <h5 className="mx-0 my-1">Manejo de Ejemplares</h5>
       <span className="p-input-icon-left">
         <i className="pi pi-search" />
         <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Buscar..." />
@@ -150,7 +150,7 @@ function AdminEjemplares() {
         <DataTable ref={dt} value={products}
           dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords}"
           globalFilter={globalFilter} header={header} responsiveLayout="scroll">
           <Column field="copyID" header="ID" sortable style={{ minWidth: '8rem' }}></Column>
           <Column field="bookID" header="ID Libro" sortable style={{ minWidth: '16rem' }}></Column>

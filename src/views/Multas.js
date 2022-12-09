@@ -36,8 +36,8 @@ function Multas() {
         {
           fines.map((fine) => {
             return (
-              <Card title={`Id: ${fine.fines_ID}`} subTitle={`${fine.status}`} style={{ width: '22em', margin: '3rem' }} >
-                <p>Descripcion: {fine.description}</p>
+              <Card title={`ID: ${fine.fines_ID}`} subTitle={`${fine.status}`} style={{ width: '22em', margin: '3rem' }} >
+                <p>Descripción: {fine.description}</p>
               </Card>
             )
           })

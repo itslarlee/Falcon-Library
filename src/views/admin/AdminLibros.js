@@ -189,13 +189,13 @@ function AdminLibros() {
         <DataTable ref={dt} value={products}
           dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords}"
           globalFilter={globalFilter} header={header} responsiveLayout="scroll">
           <Column field="bookID" header="ID" sortable style={{ minWidth: '8rem' }}></Column>
           <Column field="book_Name" header="Nombre" sortable style={{ minWidth: '16rem' }}></Column>
           <Column field="author" header="Autor" sortable style={{ minWidth: '12rem' }}></Column>
-          <Column field="epilogue" header="Epilogo" sortable style={{ minWidth: '30rem' }}></Column>
-          <Column field="gender" header="Genero" sortable style={{ minWidth: '16rem' }}></Column>
+          <Column field="epilogue" header="Epílogo" sortable style={{ minWidth: '30rem' }}></Column>
+          <Column field="gender" header="Género" sortable style={{ minWidth: '16rem' }}></Column>
           <Column body={actionBodyTemplate} exportable={false} style={{ minWidth: '8rem' }}></Column>
         </DataTable>
       </div>

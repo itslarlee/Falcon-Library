@@ -186,7 +186,7 @@ function AdminReservas() {
         <DataTable ref={dt} value={products}
           dataKey="id" paginator rows={10} rowsPerPageOptions={[5, 10, 25]}
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+          currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords}"
           globalFilter={globalFilter} header={header} responsiveLayout="scroll">
           <Column field="reserve_ID" header="ID" sortable style={{ minWidth: '12rem' }}></Column>
           <Column field="user_ID" header="ID Usuario" sortable style={{ minWidth: '16rem' }}></Column>
