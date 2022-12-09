@@ -25,7 +25,7 @@ const Header = () => {
     ];
     const adminTabs = [...userTabs, { label: 'Admin', icon: 'pi pi-fw pi-server', pageURL: '/admin'}];
 
-    const menuTabs = (user?.role === 'Admin') ? [...adminTabs,  logOutTab] : [...userTabs, logOutTab]
+    const menuTabs = (user?.role === 'Administrador') ? [...adminTabs,  logOutTab] : [...userTabs, logOutTab]
 
     const changeTab = ({value, index}) => {
         if (value.logOut) {
