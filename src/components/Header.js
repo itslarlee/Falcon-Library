@@ -16,7 +16,7 @@ const Header = () => {
         state.navigationSlice.currentTabState,
     ]); 
 
-    const logOutTab =  { label: 'Salir Sesion', icon: 'pi pi-fw pi-sign-out', pageURL: '/', logOut: true};
+    const logOutTab =  { label: 'Salir Sesión', icon: 'pi pi-fw pi-sign-out', pageURL: '/', logOut: true};
 
     const userTabs = [
         { label: 'Libros', icon: 'pi pi-fw pi-book', pageURL: '/libros' },
