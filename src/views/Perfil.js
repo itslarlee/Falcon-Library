@@ -23,7 +23,7 @@ function Perfil() {
       </div>
       <div className="panel-pages">
         <Card title={`${user.user_Name} ${user.f_LastName} ${user.s_LastName} `} subTitle={`${user.role}`} style={{ width: '25em' }} >
-          <p>Rol: {user.role}</p>
+          <p>Cédula {user.user_ID}</p>
           <p>Correo: {user.email}</p>
         </Card>
       </div>

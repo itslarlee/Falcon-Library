@@ -14,7 +14,7 @@ function Admin() {
     const user = JSON.parse(window.sessionStorage.getItem('user'));
     if (!user) {
       navigate(`/`);
-    } else if(user?.role !== 'Admin') {
+    } else if(user?.role !== 'Administrador') {
       navigate(`/perfil`);
     } 
   }, [])
