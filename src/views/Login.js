@@ -58,7 +58,7 @@ function Login() {
                             window.sessionStorage.setItem("user", JSON.stringify(userDB));
                             navigate("/libros");
                         } else {
-                    toast.current.show({ severity: 'error', summary: 'Error', detail: `Las credenciales no son validas`, life: 3000 });
+                    toast.current.show({ severity: 'error', summary: 'Error', detail: `Las credenciales no son válidas`, life: 3000 });
                             console.log("No");
                         }
                     }}
@@ -66,7 +66,7 @@ function Login() {
                     {(props) => (
                         <Form>
                             <div className="bg max-w-full max-h-full flex flex-row m-6 align-items-center justify-content-center">
-                                <Card title="Inicio de sesion" className="m-4" style={{ width: '50rem', marginBottom: '2em' }}>
+                                <Card title="Inicio de sesión" className="m-4" style={{ width: '50rem', marginBottom: '2em' }}>
                                     <div className="p-fluid grid">
                                         <Field name="email">
                                             {({
