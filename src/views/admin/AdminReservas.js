@@ -197,7 +197,7 @@ function AdminReservas() {
         </DataTable>
       </div>
 
-      <Dialog visible={productDialog} style={{ width: '450px' }} header="Nuevo usuario" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+      <Dialog visible={productDialog} style={{ width: '450px' }} header="Nueva reserva" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
         <div className="field">
           <label htmlFor="reserve_ID">ID</label>
           <InputNumber id="reserve_ID" useGrouping={false} value={product.reserve_ID} onValueChange={(e) => onInputNumberChange(e, 'reserve_ID')} />
