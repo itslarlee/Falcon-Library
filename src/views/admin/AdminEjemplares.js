@@ -158,7 +158,7 @@ function AdminEjemplares() {
         </DataTable>
       </div>
 
-      <Dialog visible={productDialog} style={{ width: '450px' }} header="Nuevo Libro" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+      <Dialog visible={productDialog} style={{ width: '450px' }} header="Nuevo Ejemplar" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
         <div className="field">
           <label htmlFor="copyID">ID</label>
           <InputNumber id="copyID" useGrouping={false} value={product.copyID} onValueChange={(e) => onInputNumberChange(e, 'copyID')} />

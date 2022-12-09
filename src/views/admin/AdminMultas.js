@@ -192,7 +192,7 @@ function AdminMultas() {
         </DataTable>
       </div>
 
-      <Dialog visible={productDialog} style={{ width: '450px' }} header="Nuevo Libro" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
+      <Dialog visible={productDialog} style={{ width: '450px' }} header="Nueva Multa" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
         <div className="field">
           <label htmlFor="fines_ID">ID</label>
           <InputNumber id="fines_ID" useGrouping={false} value={product.fines_ID} onValueChange={(e) => onInputNumberChange(e, 'fines_ID')} />
